@@ -26,7 +26,7 @@ Closures have a different notation for arguments.
 
 */
 
-def doubleIt = { x -> x + x}
+def doubleIt = { x -> x + x }
 
 /*
 
@@ -36,7 +36,7 @@ twice.
 
 */
 
-def applyTwice(func, arg){
+def applyTwice(func, arg) {
     func(func(arg))
 }
 
