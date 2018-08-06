@@ -3,7 +3,7 @@
 
     <application tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
-            android:name="com.udacity.gradle.flavorspecificactivity.paid.JokeActivity"
+            android:name="com.udacity.gradle.flavorspecificactivity.JokeActivity"
             android:label="@string/title_activity_joke" />
     </application>
 

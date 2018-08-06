@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="product_flavor_name">Free</string>
+    <string name="joke">Why are pigs not allowed to ride bikes? Because they lack the thumbs to ring the bell.</string>
 </resources>

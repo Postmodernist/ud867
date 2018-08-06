@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="greeting">Welcome to the paid version!</string>
+    <string name="paid_joke">The rotation of earth really makes my day.</string>
+</resources>

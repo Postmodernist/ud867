@@ -23,12 +23,11 @@ Exercises:
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    compileSdkVersion 28
     defaultConfig {
         applicationId 'com.udacity.gradle.buildflavors'
         minSdkVersion 15
-        targetSdkVersion 24
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -36,6 +35,17 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions 'tier'
+    productFlavors {
+        free {
+            applicationId 'com.udacity.gradle.buildflavors.free'
+            dimension 'tier'
+        }
+        paid {
+            applicationId 'com.udacity.gradle.buildflavors.paid'
+            dimension 'tier'
         }
     }
 }
@@ -49,8 +59,8 @@ Uncomment the following line to use our solution.
 //apply from:"solution.gradle"
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:24.1.1'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0-beta01'
 }
 
 
