@@ -11,13 +11,12 @@ public class MainActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-
-    if (idlingResource == null) {
-      idlingResource = new SimpleIdlingResource();
-    }
   }
 
   public SimpleIdlingResource getIdlingResource() {
+    if (idlingResource == null) {
+      idlingResource = new SimpleIdlingResource();
+    }
     return idlingResource;
   }
 }

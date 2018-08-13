@@ -20,3 +20,17 @@ allprojects {
         jcenter()
     }
 }
+
+task myTest {
+    dependsOn = [':backend:appengineStart', 'myTestStart', 'myTestStop']
+}
+
+task myTestStart {
+    mustRunAfter ':backend:appengineStart'
+    dependsOn ':app:connectedAndroidTest'
+}
+
+task myTestStop {
+    mustRunAfter myTestStart
+    dependsOn ':backend:appengineStop'
+}
