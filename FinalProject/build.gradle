@@ -22,15 +22,24 @@ allprojects {
 }
 
 task myTest {
-    dependsOn = [':backend:appengineStart', 'myTestStart', 'myTestStop']
+    dependsOn = ['myTestBefore', 'myTestFree', 'myTestPaid', 'myTestAfter']
 }
 
-task myTestStart {
-    mustRunAfter ':backend:appengineStart'
-    dependsOn ':app:connectedAndroidTest'
+task myTestBefore {
+    dependsOn 'backend:appengineStart'
 }
 
-task myTestStop {
-    mustRunAfter myTestStart
-    dependsOn ':backend:appengineStop'
+task myTestFree {
+    mustRunAfter 'myTestBefore'
+    dependsOn 'app:connectedFreeDebugAndroidTest'
+}
+
+task myTestPaid {
+    mustRunAfter 'myTestFree'
+    dependsOn 'app:connectedPaidDebugAndroidTest'
+}
+
+task myTestAfter {
+    mustRunAfter 'myTestPaid'
+    dependsOn 'backend:appengineStop'
 }
